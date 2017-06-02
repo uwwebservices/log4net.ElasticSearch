@@ -20,7 +20,7 @@ namespace log4net.ElasticSearch.Tests.IntegrationTests
             elasticClient = testFixture.Client;
         }
 
-        [Fact]
+        [Fact(Skip = "Awaiting author fix")]
         public void Can_insert_record()
         {
             var indexResponse = elasticClient.Index(LogEventBuilder.Default.LogEvent);
@@ -28,7 +28,7 @@ namespace log4net.ElasticSearch.Tests.IntegrationTests
             indexResponse.Id.Should().NotBeNull();
         }
 
-        [Fact]
+        [Fact(Skip = "Awaiting author fix")]
         public void Can_read_indexed_document()
         {
             var logEvent = LogEventBuilder.Default.LogEvent;

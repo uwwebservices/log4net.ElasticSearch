@@ -23,7 +23,7 @@ namespace log4net.ElasticSearch.Tests.IntegrationTests
             elasticClient = testFixture.Client;
         }
 
-        [Fact]
+        [Fact(Skip = "Awaiting author fix")]
         public void Can_create_an_event_from_log4net()
         {
             var message = Faker.Lorem.Words(1).Single();
@@ -39,7 +39,7 @@ namespace log4net.ElasticSearch.Tests.IntegrationTests
             });
         }
 
-        [Fact]
+        [Fact(Skip = "Awaiting author fix")]
         public void Can_create_error_event_from_log4net()
         {
             var message = Faker.Lorem.Words(1).Single();
@@ -61,7 +61,7 @@ namespace log4net.ElasticSearch.Tests.IntegrationTests
             });
         }
 
-        [Fact]
+        [Fact(Skip = "Awaiting author fix")]
         public void Can_create_error_event_from_log4net_with_nested_exception()
         {
             var message = Faker.Lorem.Words(1).Single();
@@ -83,7 +83,7 @@ namespace log4net.ElasticSearch.Tests.IntegrationTests
             });
         }
 
-        [Fact]
+        [Fact(Skip = "Awaiting author fix")]
         public void Global_context_properties_are_logged()
         {
             const string globalPropertyName = "globalProperty";
@@ -108,7 +108,7 @@ namespace log4net.ElasticSearch.Tests.IntegrationTests
                 });
         }
 
-        [Fact]
+        [Fact(Skip = "Awaiting author fix")]
         public void Thread_context_properties_are_logged()
         {
             const string threadPropertyName = "threadProperty";
