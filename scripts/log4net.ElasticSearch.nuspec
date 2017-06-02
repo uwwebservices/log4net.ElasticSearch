@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package >
     <metadata>
-        <id>log4net.ElasticSearch</id>
+        <id>log4net.ElasticSearch-AWS</id>
         <version>2.3.4</version>
         <authors>JP Toto</authors>
         <owners>JP Toto</owners>
