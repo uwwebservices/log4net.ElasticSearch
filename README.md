@@ -50,6 +50,7 @@ Please see the [DOCUMENTATION](https://github.com/uwwebservices/log4net.ElasticS
           "hostProcessGuid": null,
           "responseTime": 105,
           "responseStatusCode": 200
+        }
 }
 ```
 
