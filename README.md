@@ -5,15 +5,15 @@ log4net.ElasticSearch
 
 [![Build status](https://ci.appveyor.com/api/projects/status/agqhh0igglo4qttx/branch/master?svg=true)](https://ci.appveyor.com/project/uwwebservices/log4net-elasticsearch/branch/master)
 
-log4net.ElasticSearch is a module for the [log4net](http://logging.apache.org/log4net/) library to log messages to the [ElasticSearch](http://www.elasticsearch.org) document database. ElasticSearch offers robust full-text searching an analyzation so that errors and messages can be indexed quickly and searched easily.
+log4net.ElasticSearch is a module for the [log4net](http://logging.apache.org/log4net/) library to log messages to the [ElasticSearch](http://www.elasticsearch.org) document database. ElasticSearch offers robust full-text searching an analyzation so that errors and messages can be indexed quickly and searched easily. This version has been forked from the original [log4net.Elasticsearch](https://github.com/jptoto/log4net.ElasticSearch) project to provide the ability to connect to AWS Elastisearch instances.
 
 ### Features:
 * Supports .NET 4.0+
-* Easy installation and setup via [Nuget](https://nuget.org/packages/log4net.ElasticSearch/)
+* Easy installation and setup via [Nuget](https://nuget.org/packages/log4net.ElasticSearch-AWS/)
 * Full support for the Elasticsearch _bulk API for buffered logging
 
 ### Usage:
-Please see the [DOCUMENTATION](https://github.com/jptoto/log4net.ElasticSearch/wiki) Wiki page to begin logging errors to ElasticSearch!
+Please see the [DOCUMENTATION](https://github.com/uwwebservices/log4net.ElasticSearch/wiki) Wiki page to begin logging errors to ElasticSearch!
 
 ### Example log4net Document in Elasticsearch
 
@@ -65,32 +65,13 @@ Please see the [DOCUMENTATION](https://github.com/jptoto/log4net.ElasticSearch/w
 ```
 
 ### Issues:
-I do my best to reply to issues or questions ASAP. Please use the [ISSUES](https://github.com/jptoto/log4net.ElasticSearch/issues) page to submit questions or errors.
+We do our best to reply to issues or questions ASAP. 
 
 ### License:
-[MIT License](https://github.com/jptoto/log4net.ElasticSearch/blob/master/LICENSE)
+
 
 ### Thanks:
-- [@mpdreamz](https://github.com/Mpdreamz) and the team for their great work on the NEST library!
-- [@mastoj](https://github.com/mastoj)
-- [@kjersti](https://github.com/kjersti)
-- [@hippasus](https://github.com/hippasus)
-- [@jc74](https://github.com/jc74)
-- [@mickdelaney](https://github.com/mickdelaney)
-- [@yavari](https://github.com/yavari)
-- [@nickcanz](https://github.com/nickcanz)
-- [@wallymathieu](https://github.com/mwallymathieu)
-- [@TheSpy](https://github.com/TheSpy)
-- [@ttingen](https://github.com/ttingen)
-- [@aateeque](https://github.com/aateeque)
+
 
 ### How to build
-Use the psake.cmd file in the base directory for all build tasks.
 
-.\psake.cmd
-
-This will run the default task which compiles and runs the tests.
-
-.\psake.cmd package
-
-This task compiles the solution, runs the tests then creates a nuget package
