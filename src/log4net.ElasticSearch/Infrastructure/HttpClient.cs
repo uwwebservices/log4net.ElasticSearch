@@ -10,8 +10,8 @@ namespace log4net.ElasticSearch.Infrastructure
 {
     public interface IHttpClient
     {
-        void Post(Uri uri, logEvent item);
-        void PostBulk(Uri uri, IEnumerable<logEvent> items);
+        void Post<T>(Uri uri, T item, string awsAccessKey, string awsSecretKey, string awsRegion);
+        void PostBulk<T>(Uri uri, IEnumerable<T> items, string awsAccessKey, string awsSecretKey, string awsRegion);
     }
 
     public class HttpClient : IHttpClient
@@ -19,7 +19,7 @@ namespace log4net.ElasticSearch.Infrastructure
         const string ContentType = "application/json";
         const string Method = "POST";
 
-        public void Post(Uri uri, logEvent item)
+        public void Post<T>(Uri uri, T item, string awsAccessKey = null, string awsSecretKey = null, string awsRegion = null)
         {
             var httpWebRequest = RequestFor(uri);
 
@@ -28,7 +28,14 @@ namespace log4net.ElasticSearch.Infrastructure
                 streamWriter.Write(item.ToJson());
                 streamWriter.Flush();
 
-                var httpResponse = (HttpWebResponse) httpWebRequest.GetResponse();
+                // Special sauce for AWS Elasticserch domains to pass AWS credentials and sign the request
+                // ServiceName for AWS Elasticsearch = "es"
+                if (!string.IsNullOrWhiteSpace(awsAccessKey) && !string.IsNullOrWhiteSpace(awsSecretKey) && !string.IsNullOrWhiteSpace(awsRegion))
+                {
+                    SignV4Util.SignRequest(httpWebRequest, Encoding.UTF8.GetBytes(item.ToJson()), awsAccessKey, awsSecretKey, awsRegion, "es");
+                }
+
+                var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
                 httpResponse.Close();
 
                 if (httpResponse.StatusCode != HttpStatusCode.Created)
@@ -45,7 +52,7 @@ namespace log4net.ElasticSearch.Infrastructure
         /// <typeparam name="T">Type/item being inserted. Should be a list of events</typeparam>
         /// <param name="uri">Fully formed URI to the ES endpoint</param>
         /// <param name="items">List of logEvents</param>
-        public void PostBulk(Uri uri, IEnumerable<logEvent> items)
+        public void PostBulk<T>(Uri uri, IEnumerable<T> items, string awsAccessKey = null, string awsSecretKey = null, string awsRegion = null)
         {
             var httpWebRequest = RequestFor(uri);
 
@@ -66,6 +73,13 @@ namespace log4net.ElasticSearch.Infrastructure
                 streamWriter.Write(postBody.ToString());
                 streamWriter.Flush();
 
+                // Special sauce for AWS Elasticserch domains to pass AWS credentials and sign the request
+                // ServiceName for AWS Elasticsearch = "es"
+                if (!string.IsNullOrWhiteSpace(awsAccessKey) && !string.IsNullOrWhiteSpace(awsSecretKey) && !string.IsNullOrWhiteSpace(awsRegion))
+                {
+                    SignV4Util.SignRequest(httpWebRequest, Encoding.UTF8.GetBytes(postBody.ToString()), awsAccessKey, awsSecretKey, awsRegion, "es");
+                }
+
                 var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
                 httpResponse.Close();
 
@@ -79,11 +93,11 @@ namespace log4net.ElasticSearch.Infrastructure
 
         public static HttpWebRequest RequestFor(Uri uri)
         {
-            var httpWebRequest = (HttpWebRequest) WebRequest.Create(uri);
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create(uri);
 
             httpWebRequest.ContentType = ContentType;
             httpWebRequest.Method = Method;
-            
+
             if (!string.IsNullOrWhiteSpace(uri.UserInfo))
             {
                 httpWebRequest.Headers.Remove(HttpRequestHeader.Authorization);

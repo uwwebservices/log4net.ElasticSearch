@@ -15,7 +15,7 @@ namespace log4net.ElasticSearch.Tests.UnitTests
         {
             var logEvents = new[]
                     {
-                        new logEvent(), new logEvent(), new logEvent(), new logEvent()
+                        new uwLogEvent(), new uwLogEvent(), new uwLogEvent(), new uwLogEvent()
                     };
 
             using (Clock.Freeze(new DateTime(2015, 01, 01, 23, 59, 58)))

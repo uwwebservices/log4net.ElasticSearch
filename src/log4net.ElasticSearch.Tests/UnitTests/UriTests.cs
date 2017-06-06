@@ -20,7 +20,7 @@ namespace log4net.ElasticSearch.Tests.UnitTests
         {
             UriFor(ImplicityNonRollingConnectionString).
                 AbsoluteUri.Should().
-                Be("http://localhost:9200/log/logEvent");
+                Be("http://localhost:9200/log/uwLogEvent");
         }
 
         [Fact]
@@ -28,7 +28,7 @@ namespace log4net.ElasticSearch.Tests.UnitTests
         {
             UriFor(ExplicitlyNonRollingConnectionString).
                 AbsoluteUri.Should().
-                Be("http://localhost:9200/log/logEvent");
+                Be("http://localhost:9200/log/uwLogEvent");
         }
 
         [Fact(Skip = "Haven't figured out why this occasionally fails yet")]
@@ -38,7 +38,7 @@ namespace log4net.ElasticSearch.Tests.UnitTests
             {
                 UriFor(RollingConnectionString).
                     AbsoluteUri.Should().
-                    Be("http://localhost:9200/log-2015.01.05/logEvent");
+                    Be("http://localhost:9200/log-2015.01.05/uwLogEvent");
             }
         }
 
@@ -49,13 +49,13 @@ namespace log4net.ElasticSearch.Tests.UnitTests
             {
                 UriFor(RollingConnectionString).
                     AbsoluteUri.Should().
-                    Be("http://localhost:9200/log-2015.01.05/logEvent");
+                    Be("http://localhost:9200/log-2015.01.05/uwLogEvent");
             }
             using (Clock.Freeze(new DateTime(2015, 01, 06)))
             {
                 UriFor(RollingConnectionString).
                     AbsoluteUri.Should().
-                    Be("http://localhost:9200/log-2015.01.06/logEvent");
+                    Be("http://localhost:9200/log-2015.01.06/uwLogEvent");
             }
         }
 
@@ -64,7 +64,7 @@ namespace log4net.ElasticSearch.Tests.UnitTests
         {
             UriFor(ImplicitlyNonRollingPortLessConnectionString).
                 AbsoluteUri.Should().
-                Be("http://localhost/log/logEvent");
+                Be("http://localhost/log/uwLogEvent");
         }
 
         [Fact]
@@ -72,7 +72,7 @@ namespace log4net.ElasticSearch.Tests.UnitTests
         {
             UriFor(BulkConnectionString).
                 AbsoluteUri.Should().
-                Be("http://localhost/log/logEvent/_bulk");
+                Be("http://localhost/log/uwLogEvent/_bulk");
         }
 
         [Fact]
@@ -80,7 +80,7 @@ namespace log4net.ElasticSearch.Tests.UnitTests
         {
             UriFor(ExplicitlyNonRollingPortLessConnectionString).
                 AbsoluteUri.Should().
-                Be("http://localhost/log/logEvent");
+                Be("http://localhost/log/uwLogEvent");
         }
 
         [Fact]
@@ -90,7 +90,7 @@ namespace log4net.ElasticSearch.Tests.UnitTests
             {
                 UriFor(RollingPortLessConnectionString).
                     AbsoluteUri.Should().
-                    Be("http://localhost/log-2015.03.31/logEvent");
+                    Be("http://localhost/log-2015.03.31/uwLogEvent");
             }
         }
 

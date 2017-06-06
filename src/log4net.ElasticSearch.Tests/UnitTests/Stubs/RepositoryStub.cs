@@ -10,17 +10,17 @@ namespace log4net.ElasticSearch.Tests.UnitTests.Stubs
 {
     public class RepositoryStub : IRepository
     {
-        readonly ConcurrentBag<IEnumerable<logEvent>> logEntries;
-        readonly ConcurrentDictionary<int, IEnumerable<logEvent>> logEntriesByThread;
+        readonly ConcurrentBag<IEnumerable<uwLogEvent>> logEntries;
+        readonly ConcurrentDictionary<int, IEnumerable<uwLogEvent>> logEntriesByThread;
         Exception exception;
 
         public RepositoryStub()
         {
-            logEntries = new ConcurrentBag<IEnumerable<logEvent>>();
-            logEntriesByThread = new ConcurrentDictionary<int, IEnumerable<logEvent>>();
+            logEntries = new ConcurrentBag<IEnumerable<uwLogEvent>>();
+            logEntriesByThread = new ConcurrentDictionary<int, IEnumerable<uwLogEvent>>();
         }
 
-        public void Add(IEnumerable<logEvent> logEvents, int bufferSize)
+        public void Add(IEnumerable<uwLogEvent> logEvents, int bufferSize)
         {
             if (exception != null)
             {
@@ -43,7 +43,7 @@ namespace log4net.ElasticSearch.Tests.UnitTests.Stubs
             exception = ex;
         }
 
-        public IEnumerable<IEnumerable<logEvent>> LogEntries { get{ return logEntries; } }
-        public IEnumerable<KeyValuePair<int, IEnumerable<logEvent>>> LogEntriesByThread { get { return logEntriesByThread; } }        
+        public IEnumerable<IEnumerable<uwLogEvent>> LogEntries { get{ return logEntries; } }
+        public IEnumerable<KeyValuePair<int, IEnumerable<uwLogEvent>>> LogEntriesByThread { get { return logEntriesByThread; } }        
     }
 }

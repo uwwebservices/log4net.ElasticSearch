@@ -6,7 +6,7 @@ namespace log4net.ElasticSearch
 {
     public interface IRepository
     {
-        void Add(IEnumerable<logEvent> logEvents, int bufferSize);
+        void Add(IEnumerable<uwLogEvent> logEvents, int bufferSize);
     }
 
     public class Repository : IRepository
@@ -27,19 +27,19 @@ namespace log4net.ElasticSearch
         /// </summary>
         /// <param name="logEvents">A collection of logEvents</param>
         /// <param name="bufferSize">The BufferSize as set in the connection string details</param>
-        public void Add(IEnumerable<logEvent> logEvents, int bufferSize)
+        public void Add(IEnumerable<uwLogEvent> logEvents, int bufferSize)
         {
             try
             {
                 if (bufferSize <= 1)
                 {
                     // Post the logEvents one at a time throught the ES insert API
-                    logEvents.Do(logEvent => httpClient.Post(uri, logEvent));
+                    logEvents.Do(logEvent => httpClient.Post(uri, logEvent, uri.AWSAccessKey(), uri.AWSSecretKey(), uri.AWSRegion()));
                 }
                 else
                 {
                     // Post the logEvents all at once using the ES _bulk API
-                    httpClient.PostBulk(uri, logEvents);
+                    httpClient.PostBulk(uri, logEvents, uri.AWSAccessKey(), uri.AWSSecretKey(), uri.AWSRegion());
                 }   
             }
             catch(System.Exception ex)

@@ -31,7 +31,11 @@ namespace log4net.ElasticSearch
         {
             base.ActivateOptions();
 
-            ServicePointManager.Expect100Continue = false;
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SetTcpKeepAlive(true, 10000, 1000);
+            ServicePointManager.UseNagleAlgorithm = false;
+            ServicePointManager.DefaultConnectionLimit = 300;
+            ServicePointManager.EnableDnsRoundRobin = true;
 
             try
             {
@@ -72,7 +76,7 @@ namespace log4net.ElasticSearch
 
         protected virtual bool TryAsyncSend(IEnumerable<LoggingEvent> events)
         {
-            return ThreadPool.QueueUserWorkItem(SendBufferCallback, logEvent.CreateMany(events));
+            return ThreadPool.QueueUserWorkItem(SendBufferCallback, uwLogEvent.CreateMany(events));
         }
 
         protected virtual bool TryWaitAsyncSendFinish()
@@ -90,7 +94,7 @@ namespace log4net.ElasticSearch
         {
             try
             {
-                repository.Add((IEnumerable<logEvent>) state, BufferSize);
+                repository.Add((IEnumerable<uwLogEvent>) state, BufferSize);
             }
             catch (Exception ex)
             {

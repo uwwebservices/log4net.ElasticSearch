@@ -15,15 +15,17 @@ namespace log4net.ElasticSearch.Models
 
         public static implicit operator System.Uri(Uri uri)
         {
+            //Type (uwLogEvent) should match the type name of the object that 
+            //gets serialized to JSON and sent to the elasticsearch instance
             if (!string.IsNullOrWhiteSpace(uri.User()) && !string.IsNullOrWhiteSpace(uri.Password()))
             {
                 return
-                    new System.Uri(string.Format("{0}://{1}:{2}@{3}:{4}/{5}/logEvent{6}", uri.Scheme(), uri.User(), uri.Password(),
+                    new System.Uri(string.Format("{0}://{1}:{2}@{3}:{4}/{5}/uwLogEvent{6}", uri.Scheme(), uri.User(), uri.Password(),
                                                  uri.Server(), uri.Port(), uri.Index(), uri.Bulk()));
             }
             return string.IsNullOrEmpty(uri.Port())
-                ? new System.Uri(string.Format("{0}://{1}/{2}/logEvent{3}", uri.Scheme(), uri.Server(), uri.Index(), uri.Bulk()))
-                : new System.Uri(string.Format("{0}://{1}:{2}/{3}/logEvent{4}", uri.Scheme(), uri.Server(), uri.Port(), uri.Index(), uri.Bulk()));
+                ? new System.Uri(string.Format("{0}://{1}/{2}/uwLogEvent{3}", uri.Scheme(), uri.Server(), uri.Index(), uri.Bulk()))
+                : new System.Uri(string.Format("{0}://{1}:{2}/{3}/uwLogEvent{4}", uri.Scheme(), uri.Server(), uri.Port(), uri.Index(), uri.Bulk()));
         }
 
         public static Uri For(string connectionString)
@@ -81,6 +83,21 @@ namespace log4net.ElasticSearch.Models
             return parts.Contains(Keys.Rolling) && parts[Keys.Rolling].ToBool();
         }
 
+        public string AWSAccessKey()
+        {
+            return connectionStringParts[Keys.AWSAccessKey];
+        }
+
+        public string AWSSecretKey()
+        {
+            return connectionStringParts[Keys.AWSSecretKey];
+        }
+
+        public string AWSRegion()
+        {
+            return connectionStringParts[Keys.AWSRegion];
+        }
+
         private static class Keys
         {
             public const string Scheme = "Scheme";
@@ -91,6 +108,9 @@ namespace log4net.ElasticSearch.Models
             public const string Index = "Index";
             public const string Rolling = "Rolling";
             public const string BufferSize = "BufferSize";
+            public const string AWSAccessKey = "AWSAccessKey";
+            public const string AWSSecretKey = "AWSSecretKey";
+            public const string AWSRegion = "AWSRegion";
         }
     }
 }

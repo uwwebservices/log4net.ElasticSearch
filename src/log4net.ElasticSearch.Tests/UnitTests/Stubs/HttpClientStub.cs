@@ -18,7 +18,7 @@ namespace log4net.ElasticSearch.Tests.UnitTests.Stubs
             items = new Dictionary<Uri, IList<object>>();
         }
 
-        public void Post(Uri uri, logEvent item)
+        public void Post<T>(Uri uri, T item, string awsAccessKey = null, string awsSecretKey = null, string awsRegion = null)
         {
             if (!items.ContainsKey(uri))
             {
@@ -29,7 +29,7 @@ namespace log4net.ElasticSearch.Tests.UnitTests.Stubs
             action();
         }
 
-        public void PostBulk(Uri uri, IEnumerable<logEvent> items)
+        public void PostBulk<T>(Uri uri, IEnumerable<T> items, string awsAccessKey = null, string awsSecretKey = null, string awsRegion = null)
         {
 
         }
