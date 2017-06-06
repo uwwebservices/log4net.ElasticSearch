@@ -19,48 +19,37 @@ Please see the [DOCUMENTATION](https://github.com/uwwebservices/log4net.ElasticS
 
 ```json
 {
-	"_index": "log-2016.02.12",
-	"_type": "logEvent",
-	"_id": "AVLXHEwEJfnUYPcgkJ5r",
-	"_version": 1,
-	"_score": 1,
-	"_source": {
-		"timeStamp": "2016-02-12T20:11:41.5864254Z",
-		"message": "Something broke.",
-		"messageObject": {},
-		"exception": {
-			"Type": "System.Exception",
-			"Message": "There was a system error",
-			"HelpLink": null,
-			"Source": null,
-			"HResult": -2146233088,
-			"StackTrace": null,
-			"Data": {
-				"CustomProperty": "CustomPropertyValue",
-				"SystemUserID": "User43"
-			},
-			"InnerException": null
-		},
-		"loggerName": "log4net.ES.Example.Program",
-		"domain": "log4net.ES.Example.vshost.exe",
-		"identity": "",
-		"level": "ERROR",
-		"className": "log4net.ES.Example.Program",
-		"fileName": "C:\\Users\\jtoto\\projects\\log4net.ES.Example\\log4net.ES.Example\\Program.cs",
-		"lineNumber": "26",
-		"fullInfo": "log4net.ES.Example.Program.Main(C:\\Users\\jtoto\\projects\\log4net.ES.Example\\log4net.ES.Example\\Program.cs:26)",
-		"methodName": "Main",
-		"fix": "LocationInfo, UserName, Identity, Partial",
-		"properties": {
-			"log4net:Identity": "",
-			"log4net:UserName": "JToto",
-			"log4net:HostName": "JToto01",
-			"@timestamp": "2016-02-12T20:11:41.5864254Z"
-		},
-		"userName": "JToto",
-		"threadName": "9",
-		"hostName": "JTOTO01"
-	}
+        "_index": "applog-uwcore-2017.06.06",
+        "_type": "uwLogEvent",
+        "_id": "AVx_hI1WdeUWtye4Pmuc",
+        "_score": 1,
+        "_source": {
+          "logDate": "2017-06-06T22:26:01.8624637Z",
+          "thread": "14",
+          "executingAssembly": "UW.Web.Services.Test",
+          "version": "1.0.0.0",
+          "logLevel": "ERROR",
+          "logger": "UW.Web.Services.Test.Logging.Log4netLoggerTest",
+          "message": "Log4netLoggerTest_Extended_Fields_Get_Logged test message",
+          "exception": null,
+          "environment": "Workstation",
+          "host": "DFB1W52",
+          "originalCallerId": null,
+          "userAgent": null,
+          "page": "/",
+          "remoteIP": null,
+          "threadId": "cf115a29-aee3-43a0-8ef3-32bf44539e42",
+          "directCallerId": null,
+          "httpMethod": "GET",
+          "resourceName": "Testing",
+          "requestFormat": "json",
+          "webServiceVersion": "1",
+          "logSourceName": "UW Core Test Project",
+          "logModelKey": null,
+          "taskFriendlyID": null,
+          "hostProcessGuid": null,
+          "responseTime": 105,
+          "responseStatusCode": 200
 }
 ```
 
