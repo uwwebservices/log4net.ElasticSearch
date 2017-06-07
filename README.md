@@ -12,9 +12,6 @@ log4net.ElasticSearch is a module for the [log4net](http://logging.apache.org/lo
 * Easy installation and setup via [Nuget](https://nuget.org/packages/log4net.ElasticSearch-AWS/)
 * Full support for the Elasticsearch _bulk API for buffered logging
 
-### Usage:
-Please see the [DOCUMENTATION](https://github.com/uwwebservices/log4net.ElasticSearch/wiki) Wiki page to begin logging errors to ElasticSearch!
-
 ### Example log4net Document in Elasticsearch
 
 ```json
@@ -53,15 +50,3 @@ Please see the [DOCUMENTATION](https://github.com/uwwebservices/log4net.ElasticS
         }
 }
 ```
-
-### Issues:
-We do our best to reply to issues or questions ASAP. 
-
-### License:
-
-
-### Thanks:
-
-
-### How to build
-
