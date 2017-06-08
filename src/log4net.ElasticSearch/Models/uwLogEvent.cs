@@ -5,6 +5,12 @@ using System.Linq;
 
 namespace log4net.ElasticSearch.Models
 {
+	/****IMPORTANT****
+	     If you make any changes in this file you must also make changes in the uwLogEventsTemplate.json
+		and then do a PUT request to the _template/applog api for each Elastic Search environment this model is being used in. 
+		If the property you added is a string value please make sure to set it as a keyword in the json file. This helps
+		cut down on memory usage, and also makes it easier to work with the machine learning for ES.
+	****/
     /// <summary>
     /// Primary object which will get serialized into a json object to pass to ES. Deviating from CamelCase
     /// class members so that we can stick with the built-in serializer and not take a dependency on another lib. ES
