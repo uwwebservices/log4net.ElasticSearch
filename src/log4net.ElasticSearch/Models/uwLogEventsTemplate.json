@@ -7,81 +7,93 @@
    },
 	"mappings": {
 	  "uwLogEvent": {
-			"properties": {
-			  "environment": {
-				"type": "keyword"
-			  },
-			  "exception": {
-				"type": "keyword"
-			  },
-			  "executingAssembly": {
-				"type": "keyword"
-			  },
-			  "host": {
-				"type": "keyword"
-			  },
-			  "httpMethod": {
-				"type": "keyword"
-			  },
-			  "logDate": {
-				"type": "date"
-			  },
-			  "logLevel": {
-				"type": "keyword"
-			  },
-			  "logSourceName": {
-				"type": "keyword"
-			  },
-			  "logger": {
-				"type": "keyword"
-			  },
-			  "message": {
-				"type": "keyword"
-			  },
-			  "page": {
-				"type": "keyword"
-			  },
-			  "query": {
-				"properties": {
-				  "match_all": {
-					"type": "object"
-				  }
-				}
-			  },
-			  "remoteIP": {
-				"type": "keyword"
-			  },
-			  "requestFormat": {
-				"type": "keyword"
-			  },
-			  "resourceName": {
-				"type": "keyword"
-			  },
-			  "responseStatusCode": {
-				"type": "long"
-			  },
-			  "responseTime": {
-				"type": "long"
-			  },
-			  "taskFriendlyID": {
-				"type": "keyword"
-			  },
-			  "thread": {
-				"type": "keyword"
-			  },
-			  "threadId": {
-				"type": "keyword"
-			  },
-			  "userAgent": {
-				"type": "keyword"
-			  },
-			  "version": {
-				"type": "keyword"
-			  },
-			  "webServiceVersion": {
-				"type": "keyword"
-			  }
-			}
+        "properties": {
+            "directCallerId": {
+                "type": "keyword"
+            },
+            "originalCallerId": {
+                "type": "keyword"
+            },
+            "logModelKey": {
+                "type": "keyword"
+            },
+            "hostProcessGuid": {
+                "type": "keyword"
+            },
+            "environment": {
+                "type": "keyword"
+            },
+            "exception": {
+                "type": "keyword"
+            },
+            "executingAssembly": {
+                "type": "keyword"
+            },
+            "host": {
+                "type": "keyword"
+            },
+            "httpMethod": {
+                "type": "keyword"
+            },
+            "logDate": {
+                "type": "date"
+            },
+            "logLevel": {
+                "type": "keyword"
+            },
+            "logSourceName": {
+                "type": "keyword"
+            },
+            "logger": {
+                "type": "keyword"
+            },
+            "message": {
+                "type": "keyword"
+            },
+            "page": {
+                "type": "keyword"
+            },
+            "query": {
+                "properties": {
+                    "match_all": {
+                        "type": "object"
+                    }
+                }
+            },
+            "remoteIP": {
+                "type": "keyword"
+            },
+            "requestFormat": {
+                "type": "keyword"
+            },
+            "resourceName": {
+                "type": "keyword"
+            },
+            "responseStatusCode": {
+                "type": "long"
+            },
+            "responseTime": {
+                "type": "long"
+            },
+            "taskFriendlyID": {
+                "type": "keyword"
+            },
+            "thread": {
+                "type": "keyword"
+            },
+            "threadId": {
+                "type": "keyword"
+            },
+            "userAgent": {
+                "type": "keyword"
+            },
+            "version": {
+                "type": "keyword"
+            },
+            "webServiceVersion": {
+                "type": "keyword"
+            }
+        }
 		}
 	}
 }
