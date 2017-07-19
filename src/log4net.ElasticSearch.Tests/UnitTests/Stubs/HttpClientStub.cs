@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using log4net.ElasticSearch.Infrastructure;
 using log4net.ElasticSearch.Models;
 using Uri = System.Uri;
+using System.Net;
 
 namespace log4net.ElasticSearch.Tests.UnitTests.Stubs
 {
@@ -14,8 +15,9 @@ namespace log4net.ElasticSearch.Tests.UnitTests.Stubs
         public HttpClientStub(Action action)
         {
             this.action = action;
-
             items = new Dictionary<Uri, IList<object>>();
+
+
         }
 
         public void Post<T>(Uri uri, T item, string awsAccessKey = null, string awsSecretKey = null, string awsRegion = null)
@@ -32,6 +34,10 @@ namespace log4net.ElasticSearch.Tests.UnitTests.Stubs
         public void PostBulk<T>(Uri uri, IEnumerable<T> items, string awsAccessKey = null, string awsSecretKey = null, string awsRegion = null)
         {
 
+        }
+
+        public HttpWebResponse PostQuery(Uri uri, string body, string awsAccessKey = null, string awsSecretKey = null, string awsRegion = null) {
+            return null;
         }
 
         public IEnumerable<KeyValuePair<Uri, IList<object>>> Items { get { return items; } }
