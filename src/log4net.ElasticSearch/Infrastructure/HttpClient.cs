@@ -12,12 +12,41 @@ namespace log4net.ElasticSearch.Infrastructure
     {
         void Post<T>(Uri uri, T item, string awsAccessKey, string awsSecretKey, string awsRegion);
         void PostBulk<T>(Uri uri, IEnumerable<T> items, string awsAccessKey, string awsSecretKey, string awsRegion);
+        HttpWebResponse PostQuery(Uri uri, string body, string awsAccessKey = null, string awsSecretKey = null, string awsRegion = null);
     }
 
     public class HttpClient : IHttpClient
     {
         const string ContentType = "application/json";
         const string Method = "POST";
+
+        public HttpWebResponse PostQuery(Uri uri, string body, string awsAccessKey = null, string awsSecretKey = null, string awsRegion = null)
+        {
+            var httpWebRequest = RequestFor(uri);
+
+            using (var streamWriter = GetRequestStream(httpWebRequest))
+            {
+                streamWriter.Write(body.ToJson());
+                streamWriter.Flush();
+
+                // Special sauce for AWS Elasticserch domains to pass AWS credentials and sign the request
+                // ServiceName for AWS Elasticsearch = "es"
+                if (!string.IsNullOrWhiteSpace(awsAccessKey) && !string.IsNullOrWhiteSpace(awsSecretKey) && !string.IsNullOrWhiteSpace(awsRegion))
+                {
+                    SignV4Util.SignRequest(httpWebRequest, Encoding.UTF8.GetBytes(body.ToJson()), awsAccessKey, awsSecretKey, awsRegion, "es");
+                }
+
+                var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                httpResponse.Close();
+
+                if (httpResponse.StatusCode != HttpStatusCode.Created)
+                {
+                    throw new WebException(
+                        "Failed to post json to {1}.".With(uri));
+                }
+                return httpResponse;
+            }
+        }
 
         public void Post<T>(Uri uri, T item, string awsAccessKey = null, string awsSecretKey = null, string awsRegion = null)
         {

@@ -15,7 +15,7 @@ namespace log4net.ElasticSearch.Infrastructure
     /// Utility class that will sign the HTTP requests according to the Amazon Version 4 Signing Process.
     /// Taken from https://github.com/bcuff/elasticsearch-net-aws
     /// </summary>
-    internal static class SignV4Util
+    public static class SignV4Util
     {
         static readonly char[] _datePartSplitChars = { 'T' };
 
