@@ -26,24 +26,24 @@ namespace log4net.ElasticSearch.Infrastructure
 
             using (var streamWriter = GetRequestStream(httpWebRequest))
             {
-                streamWriter.Write(body.ToJson());
+                streamWriter.Write(body);
                 streamWriter.Flush();
-
-                // Special sauce for AWS Elasticserch domains to pass AWS credentials and sign the request
-                // ServiceName for AWS Elasticsearch = "es"
-                if (!string.IsNullOrWhiteSpace(awsAccessKey) && !string.IsNullOrWhiteSpace(awsSecretKey) && !string.IsNullOrWhiteSpace(awsRegion))
-                {
-                    SignV4Util.SignRequest(httpWebRequest, Encoding.UTF8.GetBytes(body.ToJson()), awsAccessKey, awsSecretKey, awsRegion, "es");
-                }
 
                 var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
                 httpResponse.Close();
 
-                if (httpResponse.StatusCode != HttpStatusCode.Created)
+                if (httpResponse.StatusCode != HttpStatusCode.OK)
                 {
                     throw new WebException(
                         "Failed to post json to {1}.".With(uri));
                 }
+
+                var encoding = ASCIIEncoding.ASCII;
+                using (var reader = new System.IO.StreamReader(httpResponse.GetResponseStream(), encoding))
+                {
+                    string responseText = reader.ReadToEnd();
+                }
+
                 return httpResponse;
             }
         }
