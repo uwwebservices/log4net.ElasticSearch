@@ -36,7 +36,7 @@ namespace log4net.ElasticSearch.Tests.UnitTests.Stubs
 
         }
 
-        public HttpWebResponse PostQuery(Uri uri, string body, string awsAccessKey = null, string awsSecretKey = null, string awsRegion = null) {
+        public string PostQuery(Uri uri, string body, string awsAccessKey = null, string awsSecretKey = null, string awsRegion = null) {
             return null;
         }
 

@@ -5,6 +5,7 @@ using System.Net;
 using System.Text;
 using log4net.ElasticSearch.Models;
 using Uri = System.Uri;
+using System.Threading.Tasks;
 
 namespace log4net.ElasticSearch.Infrastructure
 {
@@ -12,7 +13,7 @@ namespace log4net.ElasticSearch.Infrastructure
     {
         void Post<T>(Uri uri, T item, string awsAccessKey, string awsSecretKey, string awsRegion);
         void PostBulk<T>(Uri uri, IEnumerable<T> items, string awsAccessKey, string awsSecretKey, string awsRegion);
-        HttpWebResponse PostQuery(Uri uri, string body, string awsAccessKey = null, string awsSecretKey = null, string awsRegion = null);
+        string PostQuery(Uri uri, string body, string awsAccessKey = null, string awsSecretKey = null, string awsRegion = null);
     }
 
     public class HttpClient : IHttpClient
@@ -20,7 +21,7 @@ namespace log4net.ElasticSearch.Infrastructure
         const string ContentType = "application/json";
         const string Method = "POST";
 
-        public HttpWebResponse PostQuery(Uri uri, string body, string awsAccessKey = null, string awsSecretKey = null, string awsRegion = null)
+        public string PostQuery(Uri uri, string body, string awsAccessKey = null, string awsSecretKey = null, string awsRegion = null)
         {
             var httpWebRequest = RequestFor(uri);
 
@@ -29,16 +30,22 @@ namespace log4net.ElasticSearch.Infrastructure
                 streamWriter.Write(body);
                 streamWriter.Flush();
 
-                var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-                httpResponse.Close();
-
-                if (httpResponse.StatusCode != HttpStatusCode.OK)
+                using (var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse())
                 {
-                    throw new WebException(
-                        "Failed to post json to {1}.".With(uri));
+                    if (httpResponse.StatusCode != HttpStatusCode.OK)
+                    {
+                        throw new WebException(
+                            "Failed to post json to {1}.".With(uri));
+                    }
+                    using (var stream = httpResponse.GetResponseStream())
+                    {
+                        using(var reader = new StreamReader(stream))
+                        {
+                            return reader.ReadToEnd();
+                        }
+                    }
                 }
-
-                return httpResponse;
+                
             }
         }
 
