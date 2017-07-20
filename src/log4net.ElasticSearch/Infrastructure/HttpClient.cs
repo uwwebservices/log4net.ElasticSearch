@@ -38,12 +38,6 @@ namespace log4net.ElasticSearch.Infrastructure
                         "Failed to post json to {1}.".With(uri));
                 }
 
-                var encoding = ASCIIEncoding.ASCII;
-                using (var reader = new System.IO.StreamReader(httpResponse.GetResponseStream(), encoding))
-                {
-                    string responseText = reader.ReadToEnd();
-                }
-
                 return httpResponse;
             }
         }
