@@ -6,8 +6,8 @@
         <authors>UW Web Services Team</authors>
         <owners>UW Web Services Team</owners>
         <iconUrl>http://nest.azurewebsites.net/images/nuget-icon.png</iconUrl>
-        <licenseUrl>https://github.com/jptoto/log4net.ElasticSearch/blob/master/LICENSE</licenseUrl>
-        <projectUrl>https://github.com/jptoto/log4net.ElasticSearch</projectUrl>
+        <licenseUrl>https://github.com/uwwebservices/log4net.ElasticSearch/blob/master/LICENSE</licenseUrl>
+        <projectUrl>https://github.com/uwwebservices/log4net.ElasticSearch</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>This package exteneds the log4net.Elasticsearch adapter to support logging to AWS based Elasticsearch instances by providing a way to provide IAM credentials and sign the http calls to AWS using the Amazon Version 4 Signing Process.</description>
         <releaseNotes>Add the AWS specific code. Add a UW specific event log class. Change to .NET 4.5.1 version. Clean-up various readme notes.</releaseNotes>
