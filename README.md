@@ -7,7 +7,7 @@ log4net.ElasticSearch
 
 log4net.ElasticSearch is a module for the [log4net](http://logging.apache.org/log4net/) library to log messages to the [ElasticSearch](http://www.elasticsearch.org) document database. ElasticSearch offers robust full-text searching an analyzation so that errors and messages can be indexed quickly and searched easily. This version has been forked from the original [log4net.Elasticsearch](https://github.com/jptoto/log4net.ElasticSearch) project to provide the ability to connect to AWS Elastisearch instances.
 
-### Features:
+### Features: 
 * Supports .NET 4.0+
 * Easy installation and setup via [Nuget](https://nuget.org/packages/log4net.ElasticSearch-AWS/)
 * Full support for the Elasticsearch _bulk API for buffered logging
