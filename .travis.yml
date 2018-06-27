@@ -8,5 +8,5 @@ script:
  - cd src
  - dotnet restore
  - dotnet build
- - dotnet test log4net.ElasticsSearch.NetCore.Tests/log4net.ElasticsSearch.NetCore.Tests.csproj
+ - dotnet test log4net.ElasticSearch.NetCore.Tests/log4net.ElasticSearch.NetCore.Tests.csproj
 
