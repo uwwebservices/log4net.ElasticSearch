@@ -1,0 +1,11 @@
+language: csharp
+mono: none
+dotnet: 2.0.0
+
+install:
+- dotnet restore
+
+script:
+ - dotnet build
+ - dotnet test src/log4net.ElasticsSearch.NetCore.Tests/log4net.ElasticsSearch.NetCore.Tests.csproj
+
