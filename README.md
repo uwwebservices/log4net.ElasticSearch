@@ -3,12 +3,14 @@ log4net.ElasticSearch
 
 [![NuGet Status](http://img.shields.io/badge/nuget-2.3.4-green.svg)](https://www.nuget.org/packages/log4net.ElasticSearch/)
 
-[![Build status](https://ci.appveyor.com/api/projects/status/k6vrpus5dvi89h0q?svg=true)](https://ci.appveyor.com/project/ccan-uw/log4net-elasticsearch)
+[![Build Status](https://travis-ci.org/uwwebservices/log4net.ElasticSearch.svg?branch=master)](https://travis-ci.org/uwwebservices/log4net.ElasticSearch)
 
-log4net.ElasticSearch is a module for the [log4net](http://logging.apache.org/log4net/) library to log messages to the [ElasticSearch](http://www.elasticsearch.org) document database. ElasticSearch offers robust full-text searching an analyzation so that errors and messages can be indexed quickly and searched easily. This version has been forked from the original [log4net.Elasticsearch](https://github.com/jptoto/log4net.ElasticSearch) project to provide the ability to connect to AWS Elastisearch instances.
+log4net.ElasticSearch is a module for the [log4net](http://logging.apache.org/log4net/) library to log messages to the [ElasticSearch](http://www.elasticsearch.org) document database. 
+ElasticSearch offers robust full-text searching an analyzation so that errors and messages can be indexed quickly and searched easily. 
+This version has been forked from the original [log4net.Elasticsearch](https://github.com/jptoto/log4net.ElasticSearch) project to provide the ability to connect to AWS Elasticsearch instances.
 
 ### Features: 
-* Supports .NET 4.0+
+* Supports .NET Core 2.0+
 * Easy installation and setup via [Nuget](https://nuget.org/packages/log4net.ElasticSearch-AWS/)
 * Full support for the Elasticsearch _bulk API for buffered logging
 

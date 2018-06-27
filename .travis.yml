@@ -7,6 +7,13 @@ solution: log4net.ElasticSearch.sln
 script:
  - cd src
  - dotnet restore
- - dotnet build
+ - dotnet build -c Release
  - dotnet test log4net.ElasticSearch.NetCore.Tests/log4net.ElasticSearch.NetCore.Tests.csproj
 
+
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: chmod +x ./scripts/nuget_publish.sh && ./deploy/deploy.sh $NUGET_API_KEY $NUGET_SOURCE
+  #on:
+  #  branch: master
