@@ -3,7 +3,7 @@ using System.Linq;
 using log4net.Appender;
 using log4net.Core;
 
-namespace log4net.ElasticSearch.Tests.UnitTests
+namespace log4net.ElasticSearch.NetCore.Tests.UnitTests
 {
     public static class ExtensionMethods
     {

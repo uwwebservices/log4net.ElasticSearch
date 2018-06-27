@@ -4,10 +4,10 @@ using FluentAssertions;
 using Nest;
 using Xunit;
 using log4net.ElasticSearch.Models;
-using log4net.ElasticSearch.Tests.Infrastructure;
+using log4net.ElasticSearch.NetCore.Tests.Infrastructure;
 using Xunit.Sdk;
 
-namespace log4net.ElasticSearch.Tests.IntegrationTests
+namespace log4net.ElasticSearch.NetCore.Tests.IntegrationTests
 {
     [Collection("IndexCollection")]
     public class ElasticSearchAppenderTests

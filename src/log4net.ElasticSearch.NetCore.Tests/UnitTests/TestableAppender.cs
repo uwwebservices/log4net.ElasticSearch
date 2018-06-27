@@ -1,4 +1,4 @@
-﻿namespace log4net.ElasticSearch.Tests.UnitTests
+﻿namespace log4net.ElasticSearch.NetCore.Tests.UnitTests
 {
     public class TestableAppender : ElasticSearchAppender
     {

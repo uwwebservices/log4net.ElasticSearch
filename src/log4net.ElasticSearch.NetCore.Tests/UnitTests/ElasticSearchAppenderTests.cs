@@ -1,6 +1,6 @@
 ﻿using FluentAssertions;
-using log4net.ElasticSearch.Tests.Infrastructure;
-using log4net.ElasticSearch.Tests.Infrastructure.Builders;
+using log4net.ElasticSearch.NetCore.Tests.Infrastructure;
+using log4net.ElasticSearch.NetCore.Tests.Infrastructure.Builders;
 using System;
 using System.Linq;
 using System.Net.Sockets;
@@ -8,7 +8,7 @@ using System.Threading;
 using Xunit;
 using Xunit.Sdk;
 
-namespace log4net.ElasticSearch.Tests.UnitTests
+namespace log4net.ElasticSearch.NetCore.Tests.UnitTests
 {
     public class ElasticSearchAppenderTests
     {

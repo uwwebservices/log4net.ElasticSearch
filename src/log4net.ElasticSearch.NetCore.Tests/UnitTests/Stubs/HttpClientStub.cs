@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using Uri = System.Uri;
 
-namespace log4net.ElasticSearch.Tests.UnitTests.Stubs
+namespace log4net.ElasticSearch.NetCore.Tests.UnitTests.Stubs
 {
     public class HttpClientStub : IHttpClient
     {

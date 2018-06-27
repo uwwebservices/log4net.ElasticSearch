@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using log4net.Core;
 
-namespace log4net.ElasticSearch.Tests.Infrastructure.Builders
+namespace log4net.ElasticSearch.NetCore.Tests.Infrastructure.Builders
 {
     public static class LoggingEventsBuilder
     {

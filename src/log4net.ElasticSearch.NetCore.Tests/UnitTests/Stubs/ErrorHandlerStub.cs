@@ -3,7 +3,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using log4net.Core;
 
-namespace log4net.ElasticSearch.Tests.UnitTests.Stubs
+namespace log4net.ElasticSearch.NetCore.Tests.UnitTests.Stubs
 {
     public class ErrorHandlerStub : IErrorHandler
     {

@@ -3,7 +3,7 @@ using FluentAssertions;
 using log4net.ElasticSearch.Infrastructure;
 using Xunit;
 
-namespace log4net.ElasticSearch.Tests.UnitTests
+namespace log4net.ElasticSearch.NetCore.Tests.UnitTests
 {
     public class SslTests : IDisposable
     {

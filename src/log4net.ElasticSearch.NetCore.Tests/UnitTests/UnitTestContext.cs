@@ -1,7 +1,7 @@
 ﻿using System;
-using log4net.ElasticSearch.Tests.UnitTests.Stubs;
+using log4net.ElasticSearch.NetCore.Tests.UnitTests.Stubs;
 
-namespace log4net.ElasticSearch.Tests.UnitTests
+namespace log4net.ElasticSearch.NetCore.Tests.UnitTests
 {
     public class UnitTestContext : IDisposable
     {

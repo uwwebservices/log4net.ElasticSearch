@@ -1,8 +1,8 @@
 ﻿using System.Collections.Specialized;
 using System.Configuration;
-using log4net.ElasticSearch.Tests.Infrastructure;
+using log4net.ElasticSearch.NetCore.Tests.Infrastructure;
 
-namespace log4net.ElasticSearch.Tests.IntegrationTests
+namespace log4net.ElasticSearch.NetCore.Tests.IntegrationTests
 {
     public static class AppSettings
     {

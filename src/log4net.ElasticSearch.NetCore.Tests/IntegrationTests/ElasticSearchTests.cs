@@ -3,10 +3,10 @@ using Nest;
 using Xunit;
 using Xunit.Sdk;
 using log4net.ElasticSearch.Models;
-using log4net.ElasticSearch.Tests.Infrastructure;
-using log4net.ElasticSearch.Tests.Infrastructure.Builders;
+using log4net.ElasticSearch.NetCore.Tests.Infrastructure;
+using log4net.ElasticSearch.NetCore.Tests.Infrastructure.Builders;
 
-namespace log4net.ElasticSearch.Tests.IntegrationTests
+namespace log4net.ElasticSearch.NetCore.Tests.IntegrationTests
 {
     [Collection("IndexCollection")]
     public class ElasticSearchTests

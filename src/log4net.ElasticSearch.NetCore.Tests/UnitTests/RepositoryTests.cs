@@ -4,9 +4,9 @@ using FluentAssertions;
 using Xunit;
 using log4net.ElasticSearch.Infrastructure;
 using log4net.ElasticSearch.Models;
-using log4net.ElasticSearch.Tests.UnitTests.Stubs;
+using log4net.ElasticSearch.NetCore.Tests.UnitTests.Stubs;
 
-namespace log4net.ElasticSearch.Tests.UnitTests
+namespace log4net.ElasticSearch.NetCore.Tests.UnitTests
 {
     public class RepositoryTests
     {

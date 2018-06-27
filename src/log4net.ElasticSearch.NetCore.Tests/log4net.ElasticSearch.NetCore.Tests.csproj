@@ -5,7 +5,7 @@
 
     <IsPackable>false</IsPackable>
 
-    <AssemblyName>log4net.ElasticsSearch.NetCore.Tests</AssemblyName>
+    <AssemblyName>log4net.ElasticSearch.NetCore.Tests</AssemblyName>
 
     <RootNamespace>log4net.ElasticSearch.Tests</RootNamespace>
   </PropertyGroup>

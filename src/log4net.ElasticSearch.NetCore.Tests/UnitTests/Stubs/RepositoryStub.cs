@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Threading;
 using log4net.ElasticSearch.Models;
 
-namespace log4net.ElasticSearch.Tests.UnitTests.Stubs
+namespace log4net.ElasticSearch.NetCore.Tests.UnitTests.Stubs
 {
     public class RepositoryStub : IRepository
     {
