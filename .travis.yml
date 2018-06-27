@@ -15,5 +15,4 @@ deploy:
   skip_cleanup: true
   provider: script
   script: chmod +x ./scripts/nuget_publish.sh && ./deploy/deploy.sh $NUGET_API_KEY $NUGET_SOURCE
-  #on:
-  #  branch: master
+
