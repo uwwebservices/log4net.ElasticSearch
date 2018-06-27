@@ -16,6 +16,7 @@
     <PackageReleaseNotes>Move to .NET Core</PackageReleaseNotes>
     <Copyright>Copyright UW 2017</Copyright>
     <PackageTags>log logging exception elasticsearch log4net aws</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
