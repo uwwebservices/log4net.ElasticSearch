@@ -16,5 +16,5 @@ deploy:
   on:
       all_branches: true
   provider: script
-  script: chmod +x ./scripts/nuget_publish.sh && ./deploy/deploy.sh $NUGET_API_KEY $NUGET_SOURCE
+  script: chmod +x ./scripts/nuget_publish.sh && ./scripts/nuget_publish.sh $NUGET_API_KEY $NUGET_SOURCE
 
