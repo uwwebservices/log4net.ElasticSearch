@@ -8,7 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\readme.txt = ..\readme.txt
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "log4net.ElasticSearch.NetCore", "log4net.ElasticSearch.NetCore\log4net.ElasticSearch.NetCore.csproj", "{DF29C971-A9E3-403E-AAE2-10637665B2FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "log4net.ElasticSearch.NetStd", "log4net.ElasticSearch.NetStd\log4net.ElasticSearch.NetStd.csproj", "{DF29C971-A9E3-403E-AAE2-10637665B2FB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "log4net.ElasticSearch.NetCore.Tests", "log4net.ElasticSearch.NetCore.Tests\log4net.ElasticSearch.NetCore.Tests.csproj", "{0A98F793-5EE7-4590-A706-E529B288A0E4}"
 EndProject

@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>log4net.ElasticSearch</AssemblyName>
     <RootNamespace>log4net.ElasticSearch</RootNamespace>
-    <Version>2.4.0.1-beta</Version>
+    <Version>2.4.1.0-beta</Version>
     <PackageId>log4net.ElasticSearch-AWS</PackageId>
     <Authors>UW Web Services Team</Authors>
     <Company>UW Web Services Team</Company>
@@ -17,6 +17,8 @@
     <Copyright>Copyright UW 2017</Copyright>
     <PackageTags>log logging exception elasticsearch log4net aws</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AssemblyVersion>2.4.1.0</AssemblyVersion>
+    <FileVersion>2.4.1.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
