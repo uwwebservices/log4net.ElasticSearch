@@ -1,10 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>log4net.ElasticSearch</AssemblyName>
     <RootNamespace>log4net.ElasticSearch</RootNamespace>
-    <Version>2.4.0.0-beta</Version>
+    <Version>2.4.0.1-beta</Version>
     <PackageId>log4net.ElasticSearch-AWS</PackageId>
     <Authors>UW Web Services Team</Authors>
     <Company>UW Web Services Team</Company>
@@ -13,7 +13,7 @@
     <PackageIconUrl>http://nest.azurewebsites.net/images/nuget-icon.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/uwwebservices/log4net.ElasticSearch</RepositoryUrl>
     <Description>This package exteneds the log4net.Elasticsearch adapter to support logging to AWS based Elasticsearch instances by providing a way to provide IAM credentials and sign the http calls to AWS using the Amazon Version 4 Signing Process.</Description>
-    <PackageReleaseNotes>Move to .NET Core</PackageReleaseNotes>
+    <PackageReleaseNotes>Move to .NET Standard</PackageReleaseNotes>
     <Copyright>Copyright UW 2017</Copyright>
     <PackageTags>log logging exception elasticsearch log4net aws</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
