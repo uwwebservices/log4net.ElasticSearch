@@ -16,5 +16,5 @@ deploy:
   on:
     all_branches: true
   provider: script
-  script: pwd && bash scripts/nuget_publish.sh $NUGET_API_KEY $NUGET_SOURCE
+  script: pwd && bash ../scripts/nuget_publish.sh $NUGET_API_KEY $NUGET_SOURCE
 

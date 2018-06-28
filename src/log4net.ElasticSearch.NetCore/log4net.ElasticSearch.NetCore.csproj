@@ -4,7 +4,7 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <AssemblyName>log4net.ElasticSearch</AssemblyName>
     <RootNamespace>log4net.ElasticSearch</RootNamespace>
-    <Version>2.4.0.0</Version>
+    <Version>2.4.0.0-beta</Version>
     <PackageId>log4net.ElasticSearch-AWS</PackageId>
     <Authors>UW Web Services Team</Authors>
     <Company>UW Web Services Team</Company>
