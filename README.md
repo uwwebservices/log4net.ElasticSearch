@@ -10,7 +10,7 @@ ElasticSearch offers robust full-text searching an analyzation so that errors an
 This version has been forked from the original [log4net.Elasticsearch](https://github.com/jptoto/log4net.ElasticSearch) project to provide the ability to connect to AWS Elasticsearch instances.
 
 ### Features: 
-* Supports .NET Core 2.0+
+* Supports .NET Standard 2.0+  See https://github.com/dotnet/standard/blob/master/docs/versions.md for details on compatibility
 * Easy installation and setup via [Nuget](https://nuget.org/packages/log4net.ElasticSearch-AWS/)
 * Full support for the Elasticsearch _bulk API for buffered logging
 
@@ -32,7 +32,7 @@ This version has been forked from the original [log4net.Elasticsearch](https://g
           "message": "Log4netLoggerTest_Extended_Fields_Get_Logged test message",
           "exception": null,
           "environment": "Workstation",
-          "host": "DFB1W52",
+          "host": "machine name",
           "originalCallerId": null,
           "userAgent": null,
           "page": "/",
