@@ -73,7 +73,7 @@
                 "type": "long"
             },
             "responseTime": {
-                "type": "long"
+                "type": "double"
             },
             "taskFriendlyID": {
                 "type": "keyword"

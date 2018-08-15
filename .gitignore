@@ -111,3 +111,7 @@ packages
 
 # vagrant
 .vagrant
+/src/.vs/log4net.ElasticSearch/v15/Server/sqlite3/storage.ide-wal
+/src/.vs/log4net.ElasticSearch/v15/Server/sqlite3/storage.ide-shm
+/src/.vs/log4net.ElasticSearch/v15/Server/sqlite3/storage.ide
+/src/.vs/log4net.ElasticSearch/v15/Server/sqlite3/db.lock
