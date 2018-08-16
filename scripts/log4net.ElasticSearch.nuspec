@@ -2,7 +2,7 @@
 <package >
     <metadata>
         <id>log4net.ElasticSearch-AWS</id>
-        <version>2.3.5.0</version>
+        <version>2.3.4.9</version>
         <authors>UW Web Services Team</authors>
         <owners>UW Web Services Team</owners>
         <iconUrl>http://nest.azurewebsites.net/images/nuget-icon.png</iconUrl>
@@ -10,7 +10,7 @@
         <projectUrl>https://github.com/uwwebservices/log4net.ElasticSearch</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>This package exteneds the log4net.Elasticsearch adapter to support logging to AWS based Elasticsearch instances by providing a way to provide IAM credentials and sign the http calls to AWS using the Amazon Version 4 Signing Process.</description>
-        <releaseNotes>Change responseTime field from an int to a double</releaseNotes>
+        <releaseNotes>Add the AWS specific code. Add a UW specific event log class. Change to .NET 4.5.1 version. Clean-up various readme notes.</releaseNotes>
         <copyright>Copyright UW 2017</copyright>
         <tags>log logging exception elasticsearch log4net aws</tags>
         <dependencies>

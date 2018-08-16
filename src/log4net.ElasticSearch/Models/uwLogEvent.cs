@@ -71,7 +71,7 @@ namespace log4net.ElasticSearch.Models
 
         public string hostProcessGuid { get; set; }
 
-        public double? responseTime { get; set; }
+        public int? responseTime { get; set; }
 
         public int? responseStatusCode { get; set; }
 
@@ -108,7 +108,7 @@ namespace log4net.ElasticSearch.Models
                 logModelKey = loggingEvent.Properties["LogModelKey"] == null ? null : loggingEvent.Properties["LogModelKey"].ToString(),
                 taskFriendlyID = loggingEvent.Properties["TaskFriendlyID"] == null ? null : loggingEvent.Properties["TaskFriendlyID"].ToString(),
                 hostProcessGuid = loggingEvent.Properties["HostProcessGuid"] == null ? null : loggingEvent.Properties["HostProcessGuid"].ToString(),
-                responseTime = loggingEvent.Properties["ResponseTime"] == null ? default(double?) : System.Convert.ToDouble(loggingEvent.Properties["ResponseTime"]),
+                responseTime = loggingEvent.Properties["ResponseTime"] == null ? default(int?) : System.Convert.ToInt32(loggingEvent.Properties["ResponseTime"]),
                 responseStatusCode = loggingEvent.Properties["ResponseStatusCode"] == null ? default(int?) : System.Convert.ToInt32(loggingEvent.Properties["ResponseStatusCode"])
             };
 
