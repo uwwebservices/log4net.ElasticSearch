@@ -3,7 +3,7 @@ log4net.ElasticSearch
 
 [![NuGet Status](http://img.shields.io/badge/nuget-2.3.4-green.svg)](https://www.nuget.org/packages/log4net.ElasticSearch/)
 
-[![Build status](https://ci.appveyor.com/api/projects/status/k6vrpus5dvi89h0q?svg=true)](https://ci.appveyor.com/project/ccan-uw/log4net-elasticsearch)
+[![Build status](https://dev.azure.com/uwit-ews/WS/_apis/build/status/log4net.ElasticSearch)](https://dev.azure.com/uwit-ews/WS/_build/latest?definitionId=15)
 
 log4net.ElasticSearch is a module for the [log4net](http://logging.apache.org/log4net/) library to log messages to the [ElasticSearch](http://www.elasticsearch.org) document database. ElasticSearch offers robust full-text searching an analyzation so that errors and messages can be indexed quickly and searched easily. This version has been forked from the original [log4net.Elasticsearch](https://github.com/jptoto/log4net.ElasticSearch) project to provide the ability to connect to AWS Elastisearch instances.
 
